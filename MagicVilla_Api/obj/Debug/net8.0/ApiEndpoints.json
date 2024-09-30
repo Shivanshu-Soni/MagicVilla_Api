@@ -44,6 +44,15 @@
         "StatusCode": 200
       },
       {
+        "Type": "MagicVilla_Api.Model.Dto.VillaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
         "MediaTypes": [
           "text/plain",
@@ -66,7 +75,7 @@
   {
     "ContainingType": "MagicVilla_Api.Controllers.VillaApiController",
     "Method": "GetVilla",
-    "RelativePath": "api/VillaApi/id:int",
+    "RelativePath": "api/VillaApi/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -74,7 +83,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -105,7 +114,8 @@
         ],
         "StatusCode": 404
       }
-    ]
+    ],
+    "EndpointName": "GetVilla"
   },
   {
     "ContainingType": "MagicVilla_Api.Controllers.WeatherForecastController",
