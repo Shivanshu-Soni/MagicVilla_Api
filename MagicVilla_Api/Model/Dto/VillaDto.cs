@@ -7,9 +7,14 @@ namespace MagicVilla_Api.Model.Dto
         public int Id { get; set; }
         [Required]
         [MaxLength(30)]
-        
+
         public string? Name { get; set; }
         public DateTime Createdtime { get; set; }
-    } 
+        public int Occupancy { get; set; }
+        public int SqFeet
+        {
+            get; set;
+        }
 
+    }
 }
