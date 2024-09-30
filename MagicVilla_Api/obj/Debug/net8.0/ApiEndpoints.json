@@ -13,7 +13,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 200
       }
@@ -39,7 +41,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 200
       },
@@ -48,7 +52,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 201
       },
@@ -57,7 +63,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 400
       },
@@ -66,7 +74,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 404
       }
@@ -92,7 +102,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 200
       },
@@ -101,7 +113,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 400
       },
@@ -110,7 +124,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 404
       }
@@ -137,7 +153,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 400
       },
@@ -146,7 +164,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 404
       },
@@ -177,8 +197,47 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
     "EndpointName": "UpdateVilla"
+  },
+  {
+    "ContainingType": "MagicVilla_Api.Controllers.VillaApiController",
+    "Method": "UpdatepartialVilla",
+    "RelativePath": "api/VillaApi/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patch",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "UpdatepartialVilla"
   },
   {
     "ContainingType": "MagicVilla_Api.Controllers.WeatherForecastController",
@@ -194,7 +253,9 @@
         "MediaTypes": [
           "text/plain",
           "application/json",
-          "text/json"
+          "text/json",
+          "application/xml",
+          "text/xml"
         ],
         "StatusCode": 200
       }

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +17,16 @@ builder.Services.AddCors(options =>
         });
 });
 
+//registering serilog
+Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File("log\villalogs.txt",rollingInterval:RollingInterval.Day).CreateLogger();
+
+builder.Host.UseSerilog();// not use buildin log but use serilog
+builder.Services.AddControllers(options => { 
+// options.ReturnHttpNotAcceptable = true;
+}).AddNewtonsoftJson()
+  .AddXmlDataContractSerializerFormatters();//added newtonssoftjson and xmldatcontractor
 
 
-builder.Services.AddControllers().AddNewtonsoftJson();//added newtonssoftjson
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
